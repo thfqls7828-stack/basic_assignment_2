@@ -43,4 +43,5 @@ void challenge3() {
 
   // 발급한 로또 초기화
   myLottoTT.clear();
+  print("현재 발급한 로또 번호 : ${myLottoTT.toList()}");
 }

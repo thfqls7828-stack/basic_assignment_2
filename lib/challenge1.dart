@@ -1,6 +1,6 @@
-// 점수 -> 학점 변환 함수
 import 'dart:io';
 
+// 점수 -> 학점 변환 함수
 String calculrateGrade(int score) {
   switch (score ~/ 10) {
     case 10:

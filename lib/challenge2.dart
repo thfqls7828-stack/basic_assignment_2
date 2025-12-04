@@ -1,5 +1,4 @@
 void challenge2() {
-  const List<String> cart = ["티셔츠", "바지", "모자", "티셔츠", "바지"];
   const int tShirtPrice = 10000;
   const int pantsPrice = 8000;
   const int capPrice = 4000;
@@ -8,10 +7,12 @@ void challenge2() {
   final int discount;
   final int totalPrice;
 
+  const List<String> cart = ["티셔츠", "바지", "모자", "티셔츠", "바지"];
+
   // list 내 해당하는 요소들 갯수 확인
-  int tShirt = cart.where((type) => type == "티셔츠").length;
-  int pants = cart.where((type) => type == "바지").length;
-  int cap = cart.where((type) => type == "모자").length;
+  final int tShirt = cart.where((type) => type == "티셔츠").length;
+  final int pants = cart.where((type) => type == "바지").length;
+  final int cap = cart.where((type) => type == "모자").length;
 
   // 할인 전 가격, 할인 금액, 최종 결제 금액
   price = tShirt * tShirtPrice + pants * pantsPrice + cap * capPrice;
