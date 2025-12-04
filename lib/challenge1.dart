@@ -20,7 +20,6 @@ void cahllenge1() {
   final int score2 = 84;
   final String grade2;
 
-  print("필수 문제 1번");
   grade2 = calculrateGrade(score2);
   print("이 학생의 점수는 $score2이며, 등급은 $grade2입니다!");
 

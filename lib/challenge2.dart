@@ -18,7 +18,6 @@ void challenge2() {
   discount = (price >= amount) ? (price / 10).toInt() : 0;
   totalPrice = price - discount;
 
-  print("필수 문제 2번");
   print("장바구니에 $price원 어치를 담으셨네요!");
   print("할인금액 : $discount원");
   print("최종 결제 금액은 $totalPrice원입니다!");

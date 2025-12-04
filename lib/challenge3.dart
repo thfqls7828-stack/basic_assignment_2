@@ -21,19 +21,26 @@ void challenge3() {
   const List<int> winningNum = [9, 19, 29, 35, 37, 38];
   Set<int> myLottoTT = {};
   int matchCount = 0;
+  int bonus;
 
   // myLottoTT의 요소 수가 6이 될 때까지 숫자 입력
   while (myLottoTT.length < 6) {
     myLottoTT.add(Random().nextInt(45) + 1);
   }
 
-  print("발급한 로또 번호 : ${myLottoTT.toList()}");
+  //
+  bonus = Random().nextInt(45) + 1;
 
   // 당첨 번호 숫자와 같은 숫자 확인
   for (int num in myLottoTT) {
     if (winningNum.contains(num)) matchCount++;
   }
 
+  print("발급한 로또 번호 : ${myLottoTT.toList()}");
+
   // 당첨 여부 출력
   printWinOrNot(matchCount);
+
+  // 발급한 로또 초기화
+  myLottoTT.clear();
 }
