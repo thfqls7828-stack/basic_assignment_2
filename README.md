@@ -180,3 +180,74 @@ void challenge3() {
 
  ## 실행결과
  <img width="299" height="53" alt="image" src="https://github.com/user-attachments/assets/a66dd1a7-787e-43fb-ade3-550cc8231680" />
+
+ 
+ # 🔎 CHALLENGE 4 : 보너스가 추가된 가상 복권 프로그램
+ ## 프로그래밍 요구사항
+ - 기존 가상 복권 프로그램에 보너스 번호 추가
+
+ ## 구현
+ ```dart
+import 'dart:math';
+
+void printWinOrNot(double matchCount) {
+  switch (matchCount) {
+    case 6:
+      print("당첨 여부 : 1등");
+      break;
+    case 5.5:
+      print("당첨 여부 : 2등");
+      break;
+    case 5:
+      print("당첨 여부 : 3등");
+      break;
+    case 4:
+      print("당첨 여부 : 4등");
+      break;
+    case 3:
+      print("당첨 여부 : 5등");
+      break;
+    default:
+      print("당첨 여부 : 당첨 실패");
+  }
+}
+
+void myFeature() {
+  const List<int> winningNum = [9, 19, 29, 35, 37, 38];
+  Set<int> myLottoTT = {};
+  double matchCount = 0;
+  int bonus = winningNum[0];
+
+  // myLottoTT의 요소 수가 6이 될 때까지 숫자 입력
+  while (myLottoTT.length < 6) {
+    myLottoTT.add(Random().nextInt(45) + 1);
+  }
+
+  // bonus 번호 출력
+  while (winningNum.contains(bonus)) {
+    bonus = Random().nextInt(45) + 1;
+  }
+
+  // 당첨 번호 숫자와 같은 숫자 확인
+  for (int num in myLottoTT) {
+    if (bonus == num) matchCount += 0.5;
+    if (winningNum.contains(num)) matchCount++;
+  }
+
+  print("발급한 로또 번호 : ${myLottoTT.toList()}");
+  print("당첨 번호 : $winningNum");
+  print("보너스 번호 : [$bonus]");
+
+  // 당첨 여부 출력
+  printWinOrNot(matchCount);
+
+  // 발급한 로또 초기화
+  myLottoTT.clear();
+  print("현재 발급한 로또 번호 : ${myLottoTT.toList()}");
+}
+```
+ - winningNum의 요소와 보너스 점수가 겹치지 않게 while문 작성
+ - 보너스 점수는 0.5점을 주어 swtich문 내, 1등과 2등,3등 구분
+
+ ## 실행결과
+ <img width="300" height="106" alt="image" src="https://github.com/user-attachments/assets/71d40518-c849-4f18-bec6-ade03aa2ab56" />
