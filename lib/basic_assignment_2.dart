@@ -1,6 +1,7 @@
 import 'package:basic_assignment_2/challenge1.dart';
 import 'package:basic_assignment_2/challenge2.dart';
 import 'package:basic_assignment_2/challenge3.dart';
+import 'package:basic_assignment_2/my_feature.dart';
 
 void main() {
   print("필수 문제 1번");
@@ -11,4 +12,7 @@ void main() {
   print("=================");
   print("필수 문제 3번");
   challenge3();
+  print("=================");
+  print("나만의 기능");
+  myFeature();
 }
